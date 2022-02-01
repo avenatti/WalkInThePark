@@ -1,0 +1,49 @@
+﻿key,shift,neighbors,shift_neighbors
+`,~,1q,!Q
+1,!,`2q,~@Q
+2,@,3wq,#WQ
+3,#,2we4,@WE$
+4,$,3er5,#ER%
+5,%,4rt6,$RT^
+6,^,5ty7,%TY&
+7,&,6yu8,^YU*
+8,*,7ui9,&UI(
+9,(,8io0,*IO)
+0,),9op-,(OP_
+-,_,0p[=,)P{+
+=,+,-[]\,_{}|
+q,Q,`12wa,~!@WA
+w,W,q23esa,Q@#EDSA
+e,E,w34rds,W#$RDS
+r,R,e45tfd,E$%TFD
+t,T,r56ygf,R%^YGF
+y,Y,t67uhg,T^&UHG
+u,U,y78ijh,Y&*IJH
+i,I,u89okj,U*(OKJ
+o,O,i90plk,I()PLK
+p,P,o0-[;l,O)_{:L
+[,{,p-=]';,"P_+}"":"
+],},[=\',"{+|"""
+\,|,=]',"+}"""
+a,A,qwsz,QWSZ
+s,S,awedxz,AWEDXZ
+d,D,serfcx,SERFCX
+f,F,drtgvc,DRTGVC
+g,G,ftyhbv,FTYHBV
+h,H,gyujnb,GYUJNB
+j,J,huikmn,HUIKMN
+k,K,"jiol,m",JIOL<M
+l,L,"kop;.,",KOP:><
+;,:,lp['/.,"LP{""?>"
+,"""",;[]\/,:{}|?
+z,Z,asx,ASX
+x,X,zsdc ,ZSDC 
+c,C,xdfv ,XDFV 
+v,V,cfgb ,CFGB 
+b,B,vghn ,VGHN 
+n,N,bhjm ,BHJM 
+m,M,"njk, ",NJK< 
+",",<,mkl. ,MKL> 
+.,>,",l;/",<L:?
+/,?,.;',">:"""
+ , ,"xcvbnm,.",XCVBNM<>

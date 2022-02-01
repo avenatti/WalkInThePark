@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinpad>
+  <press>
+    <key>1</key>
+    <neighbors>254</neighbors>
+  </press>
+  <press>
+    <key>2</key>
+    <neighbors>14563</neighbors>
+  </press>
+  <press>
+    <key>3</key>
+    <neighbors>256</neighbors>
+  </press>
+  <press>
+    <key>4</key>
+    <neighbors>12587</neighbors>
+  </press>
+  <press>
+    <key>5</key>
+    <neighbors>12369874</neighbors>
+  </press>
+  <press>
+    <key>6</key>
+    <neighbors>32589</neighbors>
+  </press>
+  <press>
+    <key>7</key>
+    <neighbors>4580</neighbors>
+  </press>
+  <press>
+    <key>8</key>
+    <neighbors>456907</neighbors>
+  </press>
+  <press>
+    <key>9</key>
+    <neighbors>6580</neighbors>
+  </press>
+  <press>
+    <key>0</key>
+    <neighbors>789</neighbors>
+  </press>
+</pinpad>
