@@ -42,11 +42,8 @@ Change Log:
 
 import readkeys as rp
 import numpy as np
+import pandas as pd
 
-in_type = rp.FileType.CSV
-out_type = rp.PythonType.DATAFRAME
-
-keys = rp.read_keys(in_type, out_type, 'keyboard_qwerty.csv')
 
 class PasswordCriteria:
     """
@@ -129,7 +126,7 @@ class PasswordKnownsBuilder:
             raise ValueError('PasswordKnowns is empty. Please construct properly.')
         return self._passwordknowns
 
-def read_generate_walks(keys, criteria: PasswordCriteria, knowns: PasswordKnowns):
+def generate_walks(keys: pd.DataFrame, criteria: PasswordCriteria, knowns: PasswordKnowns):
     """
     Consider cyber physical system keyboard input. 
     Consider any known password criteria: length complexity etc.
@@ -144,11 +141,34 @@ def read_generate_walks(keys, criteria: PasswordCriteria, knowns: PasswordKnowns
     """
 
     # TODO algorithm
-
+    print('generate_walks')
     r = None
+    return r
 
-criteria = PasswordCriteriaBuilder().set_min_length(10).set_max_length(18).build()
-hints = PasswordKnownsBuilder().set_pass(np.array(['1', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None])).build()
+def hash_walks():
+    """
+    Use hashing to create walk rainbow table.
 
-read_generate_walks(keys, criteria, hints)
+    Args:
+
+    Returns: None (File saved to application path.)
+    """
+
+    # TODO hashing
+    print('hash_walks')
+    r = None
+    return r
+
+def read_csv_into_dataframe(filepath: str):
+    """
+    Read CSV input representing an input device (ie keyboard or pinpad) and output pandas dataframe.
+    Args:
+        filepath (str): Target input file path.
+    
+    Returns: pd.dataframe
+    """
+    in_type = rp.FileType.CSV
+    out_type = rp.PythonType.DATAFRAME
+    keys = rp.read_keys(in_type, out_type, filepath)
+    return keys    
 
