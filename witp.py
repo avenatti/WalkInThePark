@@ -67,17 +67,8 @@ class PasswordCriteriaBuilder:
     """
     Construct password criteria object.
     """
-    #def __init__(self, min_length: int, max_length: int, req_numbers: int, req_special: int, req_upper: int, req_lower: int, omitted: np.array):
     def __init__(self):
         self._passwordcriteria = PasswordCriteria()
-        # self._passwordcriteria.min_length = min_length
-        # self._passwordcriteria.max_length = max_length
-        # self._passwordcriteria.req_numbers = req_numbers
-        # self._passwordcriteria.req_special = req_special
-        # self._passwordcriteria.req_upper = req_upper
-        # self._passwordcriteria.req_lower = req_lower
-        # self._passwordcriteria.omitted = omitted
-        # return self
         return None
 
     def set_min_length(self, min_length: int):
@@ -117,8 +108,26 @@ class PasswordKnowns:
     """
     Structure to hold any known characters in the password.
     """
-    #pass = np.array([])
-    X=1
+    def __init__(self):
+        pass
+    password = None
+
+class PasswordKnownsBuilder:
+    """
+    Construct password object.
+    """
+    def __init__(self):
+        self._passwordknowns = PasswordKnowns()
+        return None
+
+    def set_pass(self, password: np.array):
+        self._passwordknowns.password = password
+        return self
+
+    def build(self):
+        if self._passwordknowns is None:
+            raise ValueError('PasswordKnowns is empty. Please construct properly.')
+        return self._passwordknowns
 
 def read_generate_walks(keys, criteria: PasswordCriteria, knowns: PasswordKnowns):
     """
@@ -134,7 +143,12 @@ def read_generate_walks(keys, criteria: PasswordCriteria, knowns: PasswordKnowns
     Returns: Specified output_type from parameters.
     """
 
+    # TODO algorithm
+
     r = None
 
 criteria = PasswordCriteriaBuilder().set_min_length(10).set_max_length(18).build()
+hints = PasswordKnownsBuilder().set_pass(np.array(['1', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None])).build()
+
+read_generate_walks(keys, criteria, hints)
 
