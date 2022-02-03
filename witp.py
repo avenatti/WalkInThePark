@@ -35,6 +35,7 @@ Functions:
     read_generate_walks
 -----------------------------------------------------------------------------------------------
 Change Log:
+2022.02.02 - Work on basic combinations logic generate_keyboard_walks
 2022.02.01 - Create basic function for generating qwerty keyboard walks. Define classes for input (context) objects.
 2022.01.31 - Created version 1.02
 -----------------------------------------------------------------------------------------------
@@ -118,6 +119,12 @@ class PasswordKnownsBuilder:
         return None
 
     def set_pass(self, password: np.array):
+        """
+        Currently only supports: 
+        Start and stop: np.array(['start_value','stop_value'])
+        Stop: np.array([None,'stop_value'])
+        Start: np.array(['start_value'])
+        """
         self._passwordknowns.password = password
         return self
 
@@ -126,7 +133,7 @@ class PasswordKnownsBuilder:
             raise ValueError('PasswordKnowns is empty. Please construct properly.')
         return self._passwordknowns
 
-def generate_walks(keys: pd.DataFrame, criteria: PasswordCriteria, knowns: PasswordKnowns):
+def generate_keyboard_walks(keys: pd.DataFrame, criteria: PasswordCriteria, knowns: PasswordKnowns):
     """
     Consider cyber physical system keyboard input. 
     Consider any known password criteria: length complexity etc.
@@ -139,9 +146,31 @@ def generate_walks(keys: pd.DataFrame, criteria: PasswordCriteria, knowns: Passw
     
     Returns: Specified output_type from parameters.
     """
-
+    keys = keys.reset_index()
+    walks = pd.DataFrame()
+    for index, row in keys.iterrows():
+        # if no data skip 
+        if len(row) < 1:
+            continue
+        # if max_length is set use that to define the array else 20...need to put this in a raml config
+        p = np.nan(criteria.max_length if (type(criteria.max_length) == type(1) and criteria.max_length > 0) else 20)
+        for character in p:
+            print('TODO')
+        # if parts of the password are known, go into condition else who cares
+        if type(knowns.password) != type(None) and len(knowns.password) > 0:
+            # starting character is known...pass over non-matching 
+            if knowns.password[0] is not None and row['key'] != knowns.password[0] or row['s'] != knowns.password[0]:
+                continue
+            if np.sum(~np.isnan(p)) == 1 and np.isnan(p(len(p) - 1)):
+                print('What to do? Fill in the value and ship it? Does that make sense.')              
+        else:
+            position = 6 # this needs to be dynamic in the future to support more than qwerty keyboard
+            print(row[position]) # this line makes no sense
+            # steps here...
+            #  
+            # print(row['key'],row['s'],row['NW'],row['NE'],row['E'],row['SE'],row['SW'],row['W'],row['NWs'],row['NEs'],row['Es'],row['SEs'],row['SWs'],row['Ws'],row['NWl'],row['NEl'],row['El'],row['SEl'],row['SWl'],row['Wl'])
     # TODO algorithm
-    print('generate_walks')
+    
     r = None
     return r
 
