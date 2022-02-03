@@ -33,7 +33,6 @@ import pandas as pd
 import witp
 
 
-
 # =============================
 # EXAMPLE 1 - Generate Password 
 #             Walks
@@ -46,8 +45,7 @@ criteria = witp.PasswordCriteriaBuilder().set_min_length(10).set_max_length(18).
 # 3. Passwords Knowns: Password starts with "1"
 hints = witp.PasswordKnownsBuilder().set_pass(np.array(['1'])).build()
 # 4. Generate walks for password list
-witp.generate_walks(keys, criteria, hints)
-
+witp.generate_keyboard_walks(keys, criteria, hints)
 
 
 # =============================
@@ -56,12 +54,10 @@ witp.generate_walks(keys, criteria, hints)
 # =============================
 
 
-
 # =============================
 # EXAMPLE 3 - Shifted Password 
 #             Walks
 # =============================
-
 
 
 # =============================
